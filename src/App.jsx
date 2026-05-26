@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import Header from './components/Header'
 import Footer from './components/Footer'
+
 
 import SplashScreen from './components/SplashScreen'
 import ScrollToTop from './components/ScrollToTop'
@@ -30,6 +32,11 @@ const App = () => {
           <main className="flex-grow">
             <Routes>
               {/* Add ur route here */}
+
+
+
+
+              <Route path="/contact" element={<Contact />} />
              
             </Routes>
           </main>
