@@ -23,7 +23,7 @@ const Footer = () => {
 
                     {/* Quick Links */}
                     <div className="col-span-1">
-                        <h4 className="text-sm font-bold text-[#00346B] mb-3">
+                        <h4 className="text-sm font-bold text-primary-700 mb-3">
                             Quick Links
                         </h4>
                         <ul className="space-y-2">
@@ -38,7 +38,7 @@ const Footer = () => {
                             <li>
                                 <Link
                                     to="/privacy"
-                                    className="text-gray-600 hover:text-[#00346B] transition-colors text-sm font-medium"
+                                    className="text-gray-600 hover:text-primary-700 transition-colors text-sm font-medium"
                                 >
                                     Privacy Policy
                                 </Link>
@@ -46,7 +46,7 @@ const Footer = () => {
                             <li>
                                 <Link
                                     to="/careers"
-                                    className="text-gray-600 hover:text-[#00346B] transition-colors text-sm font-medium"
+                                    className="text-gray-600 hover:text-primary-700 transition-colors text-sm font-medium"
                                 >
                                     Careers
                                 </Link>
