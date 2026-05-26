@@ -30,7 +30,7 @@ const App = () => {
           <main className="flex-grow">
             <Routes>
               {/* Add ur route here */}
-              <Route path="/" element={<Home />} />
+             
             </Routes>
           </main>
           <Footer />
