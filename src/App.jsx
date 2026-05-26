@@ -4,6 +4,7 @@ import ScrollToTop from './components/ScrollToTop';
 import SplashScreen from './components/SplashScreen';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Appointment from './pages/Appointment';
 
 
 const App = () => {
@@ -14,7 +15,7 @@ const App = () => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 3000); // 2.5 seconds Splash Screen
-
+  
     return () => clearTimeout(timer);
   }, []);
 
@@ -26,9 +27,9 @@ const App = () => {
       ) : (
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-grow">
+          <main className="grow">
             <Routes>
-              {/* Add ur route here */}
+              <Route path="/appointment" element={<Appointment />} />
             </Routes>
           </main>
           <Footer />
