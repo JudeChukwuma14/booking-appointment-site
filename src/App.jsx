@@ -4,6 +4,7 @@ import ScrollToTop from './components/ScrollToTop';
 import SplashScreen from './components/SplashScreen';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Contact from './pages/Contact';
 
 
 const App = () => {
@@ -29,6 +30,10 @@ const App = () => {
           <main className="flex-grow">
             <Routes>
               {/* Add ur route here */}
+
+
+
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>
           <Footer />
