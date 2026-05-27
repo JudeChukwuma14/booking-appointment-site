@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import ScrollToTop from './components/ScrollToTop';
-import SplashScreen from './components/SplashScreen';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import FindDoctor from './pages/FindDoctor';
-import Home from './pages/Home';
 
+import Header from './components/Header'
+import Footer from './components/Footer'
+
+
+import SplashScreen from './components/SplashScreen'
+import ScrollToTop from './components/ScrollToTop'
+import Home from './pages/Home'
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -15,7 +16,7 @@ const App = () => {
     // Simulate initial loading sequence
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // 2.5 seconds Splash Screen
+    }, 2500); // 2.5 seconds Splash Screen
 
     return () => clearTimeout(timer);
   }, []);
@@ -30,8 +31,13 @@ const App = () => {
           <Header />
           <main className="flex-">
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/find-doctor" element={<FindDoctor />} />
+              {/* Add ur route here */}
+
+
+
+
+              <Route path="/contact" element={<Contact />} />
+             
             </Routes>
           </main>
           <Footer />
