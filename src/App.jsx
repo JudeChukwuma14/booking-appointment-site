@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop';
 import SplashScreen from './components/SplashScreen';
-import Header from './components/Header';
-import Footer from './components/Footer';
 import FindDoctor from './pages/FindDoctor';
 import Home from './pages/Home';
 
@@ -27,14 +25,12 @@ const App = () => {
         <SplashScreen />
       ) : (
         <div className="flex flex-col min-h-screen">
-          <Header />
-          <main className="flex-">
+          <main className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/find-doctor" element={<FindDoctor />} />
             </Routes>
           </main>
-          <Footer />
         </div>
       )}
     </BrowserRouter>
