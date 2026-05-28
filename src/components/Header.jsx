@@ -50,7 +50,7 @@ const Header = () => {
                         </div>
 
                         {/* Book Appointment Button */}
-                        <Link to="/book-appointment" className="bg-[#00346B] text-white px-5 py-2 rounded-md text-sm font-bold hover:bg-[#002247] transition-colors shadow-sm ml-2">
+                        <Link to="appointment" className="bg-[#00346B] text-white px-5 py-2 rounded-md text-sm font-bold hover:bg-[#002247] transition-colors shadow-sm ml-2">
                             Book Appointment
                         </Link>
                     </nav>
