@@ -1,72 +1,5 @@
 import React from 'react'
 
-<<<<<<< HEAD
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-    }
-  </style>
-</head>
-<body class="bg-gray-100">
-
-  <!-- TOP BAR -->
-  <div class="bg-red-700 text-white text-sm px-6 py-2 flex justify-between">
-    <div>Emergency Services Unit | Admission Request</div>
-    <button class="bg-white text-red-700 px-4 py-1 rounded font-semibold">
-      Call Us
-    </button>
-  </div>
-
-  <!-- NAVBAR -->
-  <nav class="bg-white shadow-md px-10 py-4 flex justify-between items-center">
-    <div class="text-2xl font-bold text-blue-900">
-      HealthPulse
-    </div>
-
-    <ul class="hidden md:flex gap-8 text-gray-700 font-medium">
-      <li><a href="#" class="hover:text-blue-700">Departments</a></li>
-      <li><a href="#" class="hover:text-blue-700">Find a Doctor</a></li>
-      <li><a href="#" class="hover:text-blue-700">About Us</a></li>
-    </ul>
-
-    <button class="bg-blue-900 text-white px-5 py-2 rounded hover:bg-blue-800">
-      Book Appointment
-    </button>
-  </nav>
-
-  {/* <!-- HERO --> */}
-  <section class="px-10 py-10">
-    <h1 class="text-4xl font-bold text-blue-900 mb-2">
-      Get in Touch
-    </h1>
-
-    <p class="text-gray-600 mb-8">
-      We’re here to answer your questions and provide support.
-      Contact our dedicated medical team for assistance anytime.
-    </p>
-
-    <!-- MAIN GRID -->
-    <div class="grid lg:grid-cols-3 gap-6">
-
-      <!-- LEFT SIDE -->
-      <div class="space-y-6">
-
-        <!-- Emergency -->
-        <div class="bg-red-50 border border-red-200 rounded-lg p-6">
-          <h2 class="text-red-700 font-bold text-xl mb-3">
-            Emergency 24/7
-          </h2>
-
-          <p class="text-gray-600 mb-4">
-            For immediate medical emergencies please call our direct hotline.
-          </p>
-
-          <div class="text-red-700 font-bold text-lg">
-            +1 (555) 987-6543
-          </div>
-=======
 const Contact = () => {
   return (
     <div className="bg-gray-100 px-6 py-8">
@@ -74,7 +7,6 @@ const Contact = () => {
         <div className="bg-red-700 text-white text-sm px-6 py-2 flex justify-between rounded">
           <div>Emergency Services Unit | Admission Request</div>
           <button className="bg-white text-red-700 px-4 py-1 rounded font-semibold">Call Us</button>
->>>>>>> 5b0648b449f5d113fc295fd1a798cd4890ea80f5
         </div>
 
         <nav className="bg-white shadow-md px-6 py-4 flex justify-between items-center mt-6 rounded">
