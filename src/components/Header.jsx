@@ -36,6 +36,7 @@ const Header = () => {
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center gap-6">
                         <Link to="/departments" className="text-gray-600 hover:text-primary-500 text-sm font-medium">Departments</Link>
+                        
                         <Link to="/doctors" className="text-gray-600 hover:text-primary-500 text-sm font-medium">Find a Doctor</Link>
                         <Link to="/about" className="text-gray-600 hover:text-primary-500 text-sm font-medium">About Us</Link>
 
