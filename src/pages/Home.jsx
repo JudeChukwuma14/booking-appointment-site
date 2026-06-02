@@ -15,7 +15,6 @@ const Home = () => {
   return (
 
 <div>home</div>
-    
   )
 }
 
@@ -32,9 +31,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
 
       {/* Features Section */}
       <div className="container mx-auto px-4 py-8">
