@@ -12,6 +12,8 @@ import Contact from './pages/Contact'
 import { Path } from './../node_modules/@humanfs/core/src/path';
 import FindDoctor from './pages/FindDoctor';
 import BookingPage from './pages/BookingPage'
+import Departments from './pages/Departments';
+import AboutUsPage from './pages/About';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -37,14 +39,11 @@ const App = () => {
             <Routes>
               {/* Add ur route here */}
               <Route path="/" element={<Home />} />
-
-
-
-
               <Route path="/contact" element={<Contact />} />
-              <Route path='/departments' element={<Department />} />
+              <Route path="/about" element={<AboutUsPage />} />
+              <Route path='/departments' element={<Departments />} />
               <Route path='/doctors' element={<FindDoctor />} />
-              <Route path='/booking' element={<BookingPage />} />
+              <Route path='/appointment' element={<BookingPage />} />
 
 
             </Routes>
