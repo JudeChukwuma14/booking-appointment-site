@@ -36,6 +36,7 @@ const Header = () => {
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center gap-6">
                         <Link to="/departments" className="text-gray-600 hover:text-primary-500 text-sm font-medium">Departments</Link>
+                        
                         <Link to="/doctors" className="text-gray-600 hover:text-primary-500 text-sm font-medium">Find a Doctor</Link>
                         <Link to="/about" className="text-gray-600 hover:text-primary-500 text-sm font-medium">About Us</Link>
 
@@ -50,7 +51,7 @@ const Header = () => {
                         </div>
 
                         {/* Book Appointment Button */}
-                        <Link to="/book-appointment" className="bg-[#00346B] text-white px-5 py-2 rounded-md text-sm font-bold hover:bg-[#002247] transition-colors shadow-sm ml-2">
+                        <Link to="appointment" className="bg-[#00346B] text-white px-5 py-2 rounded-md text-sm font-bold hover:bg-[#002247] transition-colors shadow-sm ml-2">
                             Book Appointment
                         </Link>
                     </nav>

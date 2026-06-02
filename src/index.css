@@ -89,7 +89,9 @@
     font-size: var(--font-size-heading-1);
     line-height: var(--line-height-heading-1);
     font-weight: 700;
-    color: var(--color-primary-500);
+    color: var(--color-primary-500)
+    ;
+ 
   }
   
   h2 {
@@ -97,6 +99,8 @@
     line-height: var(--line-height-heading-2);
     font-weight: 600;
     color: var(--color-tertiary);
+
+  
   }
   
   h3 {
@@ -258,4 +262,10 @@
   .shadow-custom {
     box-shadow: 0 4px 14px 0 rgba(0, 86, 179, 0.15);
   }
+}
+
+.DRcard-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
