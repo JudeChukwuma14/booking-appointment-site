@@ -10,34 +10,14 @@ import { ProductData } from "../mock/db";
 import { Link } from "react-router-dom";
 import { MdOutlineHealthAndSafety } from "react-icons/md";
 
+
 const Home = () => {
   return (
-    <div>
-      <div className="container mx-auto px-4 py-8 flex flex-col-reverse lg:flex-row items-center gap-10 bg-[#EEF2F6]">
-        <div className="w-full lg:w-1/2">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-start mt-10 text-primary-700">
-            Quality Healthcare for You and Your Family
-          </h1>
-          <p className="text-start mt-4 text-xl sm:text-2xl lg:text-3xl leading-relaxed">
-            Accessible, expert medical care powered by technology and delivered
-            with compassion. Your health is our pulse.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-6">
-            <button className="bg-primary-700 text-white px-6 py-3 rounded-lg hover:bg-[#EEF2F6] hover:text-primary-700 hover:border hover:border-primary-700 transition duration-300 w-full sm:w-auto">
-              Book Appointment
-            </button>
-            <button className="bg-white text-primary-700 px-6 py-3 rounded-lg hover:bg-primary-700 hover:text-white transition duration-300 border border-primary-700 w-full sm:w-auto">
-              Find Doctor
-            </button>
-          </div>
-        </div>
-        <div className="w-full lg:w-1/2">
-          <div className="relative">
-            <img
-              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwb2ludG1lbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
-              alt="Booking Appointment"
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
+
+<div>home</div>
+    
+  )
+}
 
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-95 px-4 py-3 rounded-lg shadow-lg max-w-xl w-full">
               <div className="flex items-start gap-4">
