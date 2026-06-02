@@ -6,6 +6,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import FindDoctor from './pages/FindDoctor';
 import Home from './pages/Home';
+import Contact from "./pages/Contact";
+
 
 
 const App = () => {
