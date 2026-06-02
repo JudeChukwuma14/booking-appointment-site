@@ -24,7 +24,10 @@ const Card = ({ photos, title, description, nextAvailable, rating }) => {
           <FaRegCalendar />
           <span className="text-gray-600 ml-2">{nextAvailable}</span>
         </div>
-        <button className="text-white bg-primary-700 font-bold mt-4 inline-block hover:bg-gray-300 hover:text-primary-700 rounded-2xl py-2 px-4">
+        <button
+          onClick={() => console.log(`Book Consultation for ${title}`)}
+          className="text-white bg-primary-700 font-bold mt-4 inline-block hover:bg-gray-300 hover:text-primary-700 rounded-2xl py-2 px-4"
+        >
           Book Consultation
         </button>
       </div>
