@@ -27,17 +27,14 @@ const App = () => {
         <SplashScreen />
       ) : (
         <div className="flex flex-col min-h-screen">
+          <Header />
           <main className="flex-1">
             <Routes>
-              {/* Add ur route here */}
-
-
-
-
-              <Route path="/contact" element={<Contact />} />
-             
+              <Route path="/" element={<Home />} />
+              <Route path="/find-doctor" element={<FindDoctor />} />
             </Routes>
           </main>
+          <Footer />
         </div>
       )}
     </BrowserRouter>
