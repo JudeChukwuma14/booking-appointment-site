@@ -1,5 +1,5 @@
 import React from "react";
-import { LuShieldPlus } from "react-icons/lu";
+import { LuShieldPlus, LuBaby, LuBrain, LuGift  } from "react-icons/lu";
 import {
   IoIosSearch,
   IoIosArrowForward,
@@ -9,12 +9,17 @@ import Card from "../components/Card";
 import { ProductData } from "../mock/db";
 import { Link } from "react-router-dom";
 import { MdOutlineHealthAndSafety } from "react-icons/md";
-
+import { FaRegHeart } from "react-icons/fa";
 
 const Home = () => {
+  const handleButtonClick = (label) => {
+    console.log(`${label} clicked`);
+  };
+
   return (
 
 <div>home</div>
+    
   )
 }
 
@@ -58,13 +63,22 @@ const Home = () => {
               Recommended departments
             </p>
             <div className="flex flex-wrap gap-3 mt-2">
-              <button className="bg-green-500 text-black px-4 py-2 rounded-2xl hover:bg-gray-300 transition duration-300">
+              <button
+                onClick={() => handleButtonClick("General Medicine")}
+                className="bg-green-500 text-black px-4 py-2 rounded-2xl hover:bg-gray-300 transition duration-300"
+              >
                 General Medicine
               </button>
-              <button className="bg-gray-300 text-black px-4 py-2 rounded-2xl hover:bg-green-500 transition duration-300">
+              <button
+                onClick={() => handleButtonClick("Neurology")}
+                className="bg-gray-300 text-black px-4 py-2 rounded-2xl hover:bg-green-500 transition duration-300"
+              >
                 Neurology
               </button>
-              <button className="bg-gray-300 text-black px-4 py-2 rounded-2xl hover:bg-green-500 transition duration-300">
+              <button
+                onClick={() => handleButtonClick("Orthopedics")}
+                className="bg-gray-300 text-black px-4 py-2 rounded-2xl hover:bg-green-500 transition duration-300"
+              >
                 Orthopedics
               </button>
             </div>
@@ -85,7 +99,10 @@ const Home = () => {
               <p className="text-[#EEF2F6]">
                 Access results, billings and history.
               </p>
-              <button className="bg-[#EEF2F6] text-black px-4 py-2 rounded-lg hover:bg-primary-700 hover:text-white transition duration-300 mt-4 w-full">
+              <button
+                onClick={() => handleButtonClick("Login to Portal")}
+                className="bg-[#EEF2F6] text-black px-4 py-2 rounded-lg hover:bg-primary-700 hover:text-white transition duration-300 mt-4 w-full"
+              >
                 Login to Portal
               </button>
             </div>
@@ -105,6 +122,7 @@ const Home = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
+            <FaRegHeart className="text-white w-8 h-8 p-2 mb-2 bg-primary-400 rounded-xl" />
             <h3 className="text-xl font-bold text-primary-700 mb-2">
               Cardiology
             </h3>
@@ -120,6 +138,7 @@ const Home = () => {
           </div>
 
           <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
+            <LuBaby className="text-black w-8 h-8 p-2 mb-2 bg-green-500 rounded-xl" />
             <h3 className="text-xl font-bold text-primary-700 mb-2">
               Pediatrics
             </h3>
@@ -135,6 +154,7 @@ const Home = () => {
           </div>
 
           <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
+            <LuBrain className="text-black w-8 h-8 p-2 mb-2 bg-blue-200 rounded-xl" />
             <h3 className="text-xl font-bold text-primary-700 mb-2">
               Neurology
             </h3>
@@ -150,6 +170,7 @@ const Home = () => {
           </div>
 
           <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
+            <LuGift className="text-red w-8 h-8 p-2 mb-2 bg-red-200 rounded-xl" />
             <h3 className="text-xl font-bold text-primary-700 mb-2">
               Oncology
             </h3>
@@ -212,10 +233,16 @@ const Home = () => {
           doctor securely through our HIPAA-compliant Patient Portal.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-start">
-          <button className="bg-primary-700 text-white px-6 py-3 rounded-lg hover:bg-[#EEF2F6] hover:text-primary-700 hover:border hover:border-primary-700 transition duration-300 w-full sm:w-auto">
+          <button
+            onClick={() => handleButtonClick("Sign in Now")}
+            className="bg-primary-700 text-white px-6 py-3 rounded-lg hover:bg-[#EEF2F6] hover:text-primary-700 hover:border hover:border-primary-700 transition duration-300 w-full sm:w-auto"
+          >
             Sign in Now
           </button>
-          <button className="bg-white text-primary-700 border border-primary-700 px-6 py-3 rounded-lg hover:bg-primary-700 hover:text-white transition duration-300 w-full sm:w-auto">
+          <button
+            onClick={() => handleButtonClick("Create Account")}
+            className="bg-white text-primary-700 border border-primary-700 px-6 py-3 rounded-lg hover:bg-primary-700 hover:text-white transition duration-300 w-full sm:w-auto"
+          >
             Create Account
           </button>
         </div>
