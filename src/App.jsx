@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Department from './pages/Departments'
 
 
 import SplashScreen from './components/SplashScreen'
@@ -34,10 +33,10 @@ const App = () => {
       ) : (
         <div className="flex flex-col min-h-screen">
           <Header />
-
           <main className="flex-grow">
             <Routes>
               {/* Add ur route here */}
+              <Route path="/" element={<Home />} />
 
 
 
