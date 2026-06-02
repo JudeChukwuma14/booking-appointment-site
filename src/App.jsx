@@ -9,7 +9,10 @@ import Department from './pages/Departments'
 import SplashScreen from './components/SplashScreen'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
+import Contact from './pages/Contact'
 import { Path } from './../node_modules/@humanfs/core/src/path';
+import FindDoctor from './pages/FindDoctor';
+import BookingPage from './pages/BookingPage'
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -39,9 +42,11 @@ const App = () => {
 
 
 
-              {/* <Route path="/contact" element={<Contact />} /> */}
-               <Route path='departments' element={<Department/>} />
-            
+              <Route path="/contact" element={<Contact />} />
+              <Route path='/departments' element={<Department />} />
+              <Route path='/doctors' element={<FindDoctor />} />
+              <Route path='/booking' element={<BookingPage />} />
+
 
             </Routes>
           </main>
