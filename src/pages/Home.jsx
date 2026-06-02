@@ -147,7 +147,7 @@ const Home = () => {
         </h2>
         <p className="text-center text-gray-600 mb-12">
           Providing world-class healthcare across multiple specialties with
-          state-of-the-art technology.
+          state-of-the-art technology and standard doctors.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
