@@ -14,11 +14,11 @@ import FindDoctor from "./pages/FindDoctor";
 import BookingPage from "./pages/BookingPage";
 
 import Dashboard from "./pages/dashboard/Dashboard";
-import Appointments from "./pages/dashboard/Appointments";
-import Records from "./pages/dashboard/Records";
-import Billing from "./pages/dashboard/Billing";
-import Analytics from "./pages/dashboard/Analytics";
-import Settings from "./pages/dashboard/Settings";
+// import Appointments from "./pages/dashboard/Appointments";
+// import Records from "./pages/dashboard/Records";
+// import Billing from "./pages/dashboard/Billing";
+// import Analytics from "./pages/dashboard/Analytics";
+// import Settings from "./pages/dashboard/Settings";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -47,11 +47,11 @@ const App = () => {
               <Route path="/appointment" element={<BookingPage />} />
 
               <Route path="/dashboard" element={<Dashboard />} />
-<Route path="/dashboard/appointments" element={<Appointments />} />
-<Route path="/dashboard/records" element={<Records />} />
-<Route path="/dashboard/billing" element={<Billing />} />
-<Route path="/dashboard/analytics" element={<Analytics />} />
-<Route path="/dashboard/settings" element={<Settings />} />
+{/* <Route path="/dashboard/appointments" element={<Appointments />} /> */}
+{/* <Route path="/dashboard/records" element={<Records />} /> */}
+{/* <Route path="/dashboard/billing" element={<Billing />} />
+<Route path="/dashboard/analytics" element={<Analytics />} /> */}
+{/* <Route path="/dashboard/settings" element={<Settings />} /> */}
 
 
               
