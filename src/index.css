@@ -1,72 +1,74 @@
 /* Import Public Sans font */
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
+* {
+  font-family: "Roboto", sans-serif;
+}
 /* Define custom colors using CSS variables */
 @theme {
   /* Primary Colors - #0056B3 */
-  --color-primary-50: #E6F0FA;
-  --color-primary-100: #CCE0F5;
-  --color-primary-200: #99C2EB;
-  --color-primary-300: #66A3E0;
-  --color-primary-400: #3385D6;
-  --color-primary-500: #0056B3;
-  --color-primary-600: #00458F;
-  --color-primary-700: #00346B;
+  --color-primary-50: #e6f0fa;
+  --color-primary-100: #cce0f5;
+  --color-primary-200: #99c2eb;
+  --color-primary-300: #66a3e0;
+  --color-primary-400: #3385d6;
+  --color-primary-500: #0056b3;
+  --color-primary-600: #00458f;
+  --color-primary-700: #00346b;
   --color-primary-800: #002247;
   --color-primary-900: #001124;
-  --color-primary: #0056B3;
-  
+  --color-primary: #0056b3;
+
   /* Secondary Colors - #4CAF50 */
-  --color-secondary-50: #E8F5E9;
-  --color-secondary-100: #D0EBD1;
-  --color-secondary-200: #A1D7A4;
-  --color-secondary-300: #72C376;
-  --color-secondary-400: #43AF48;
-  --color-secondary-500: #4CAF50;
-  --color-secondary-600: #3D8C40;
-  --color-secondary-700: #2E6930;
-  --color-secondary-800: #1E4620;
-  --color-secondary-900: #0F2310;
-  --color-secondary: #4CAF50;
-  
+  --color-secondary-50: #e8f5e9;
+  --color-secondary-100: #d0ebd1;
+  --color-secondary-200: #a1d7a4;
+  --color-secondary-300: #72c376;
+  --color-secondary-400: #43af48;
+  --color-secondary-500: #4caf50;
+  --color-secondary-600: #3d8c40;
+  --color-secondary-700: #2e6930;
+  --color-secondary-800: #1e4620;
+  --color-secondary-900: #0f2310;
+  --color-secondary: #4caf50;
+
   /* Tertiary Colors - #0D2137 */
-  --color-tertiary-50: #E6EBF0;
-  --color-tertiary-100: #CDD6E1;
-  --color-tertiary-200: #9BAEC3;
-  --color-tertiary-300: #6985A5;
-  --color-tertiary-400: #375D87;
-  --color-tertiary-500: #0D2137;
-  --color-tertiary-600: #0A1A2C;
+  --color-tertiary-50: #e6ebf0;
+  --color-tertiary-100: #cdd6e1;
+  --color-tertiary-200: #9baec3;
+  --color-tertiary-300: #6985a5;
+  --color-tertiary-400: #375d87;
+  --color-tertiary-500: #0d2137;
+  --color-tertiary-600: #0a1a2c;
   --color-tertiary-700: #081421;
-  --color-tertiary-800: #050D16;
-  --color-tertiary-900: #03070B;
-  --color-tertiary: #0D2137;
-  
+  --color-tertiary-800: #050d16;
+  --color-tertiary-900: #03070b;
+  --color-tertiary: #0d2137;
+
   /* Neutral Colors - #6C757D */
-  --color-neutral-50: #F0F1F2;
-  --color-neutral-100: #E1E3E5;
-  --color-neutral-200: #C3C7CB;
-  --color-neutral-300: #A5ABB0;
-  --color-neutral-400: #878F96;
-  --color-neutral-500: #6C757D;
-  --color-neutral-600: #565E64;
-  --color-neutral-700: #41464B;
-  --color-neutral-800: #2B2F32;
+  --color-neutral-50: #f0f1f2;
+  --color-neutral-100: #e1e3e5;
+  --color-neutral-200: #c3c7cb;
+  --color-neutral-300: #a5abb0;
+  --color-neutral-400: #878f96;
+  --color-neutral-500: #6c757d;
+  --color-neutral-600: #565e64;
+  --color-neutral-700: #41464b;
+  --color-neutral-800: #2b2f32;
   --color-neutral-900: #161719;
-  --color-neutral: #6C757D;
-  
+  --color-neutral: #6c757d;
+
   /* Font Family */
-  --font-family-sans: 'Public Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  
+  --font-family-sans: "Roboto", sans-serif;
   /* Custom Font Sizes */
   --font-size-heading-1: 2.5rem;
   --font-size-heading-2: 2rem;
   --font-size-heading-3: 1.75rem;
   --font-size-body: 1rem;
   --font-size-label: 0.875rem;
-  
+
   /* Line Heights */
   --line-height-heading-1: 1.2;
   --line-height-heading-2: 1.3;
@@ -84,35 +86,35 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   h1 {
     font-size: var(--font-size-heading-1);
     line-height: var(--line-height-heading-1);
     font-weight: 700;
     color: var(--color-primary-500);
   }
-  
+
   h2 {
     font-size: var(--font-size-heading-2);
     line-height: var(--line-height-heading-2);
     font-weight: 600;
     color: var(--color-tertiary);
   }
-  
+
   h3 {
     font-size: var(--font-size-heading-3);
     line-height: var(--line-height-heading-3);
     font-weight: 600;
     color: var(--color-tertiary);
   }
-  
+
   p {
     font-size: var(--font-size-body);
     line-height: var(--line-height-body);
     font-weight: 400;
     color: var(--color-neutral);
   }
-  
+
   label {
     font-size: var(--font-size-label);
     line-height: var(--line-height-label);
@@ -135,21 +137,21 @@
     transition: all 0.2s ease;
     cursor: pointer;
   }
-  
+
   .btn-primary:hover {
     background-color: var(--color-primary-600);
   }
-  
+
   .btn-primary:focus {
     outline: none;
     ring: 2px solid var(--color-primary-500);
     ring-offset: 2px;
   }
-  
+
   .btn-primary:active {
     transform: scale(0.95);
   }
-  
+
   .btn-secondary {
     background-color: var(--color-secondary-500);
     color: white;
@@ -162,17 +164,17 @@
     transition: all 0.2s ease;
     cursor: pointer;
   }
-  
+
   .btn-secondary:hover {
     background-color: var(--color-secondary-600);
   }
-  
+
   .btn-secondary:focus {
     outline: none;
     ring: 2px solid var(--color-secondary-500);
     ring-offset: 2px;
   }
-  
+
   .btn-outline {
     border: 2px solid var(--color-primary-500);
     color: var(--color-primary-500);
@@ -186,18 +188,18 @@
     transition: all 0.2s ease;
     cursor: pointer;
   }
-  
+
   .btn-outline:hover {
     background-color: var(--color-primary-500);
     color: white;
   }
-  
+
   .btn-outline:focus {
     outline: none;
     ring: 2px solid var(--color-primary-500);
     ring-offset: 2px;
   }
-  
+
   .card {
     background-color: white;
     border-radius: 0.75rem;
@@ -206,11 +208,11 @@
     border: 1px solid var(--color-neutral-200);
     transition: box-shadow 0.2s ease;
   }
-  
+
   .card:hover {
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
   }
-  
+
   .input-primary {
     border: 1px solid var(--color-neutral-300);
     border-radius: 0.5rem;
@@ -219,14 +221,14 @@
     transition: all 0.2s ease;
     width: 100%;
   }
-  
+
   .input-primary:focus {
     outline: none;
     border-color: var(--color-primary-500);
     ring: 2px solid var(--color-primary-500);
     ring-opacity: 0.2;
   }
-  
+
   .badge-primary {
     background-color: var(--color-primary-100);
     color: var(--color-primary-700);
@@ -235,7 +237,7 @@
     font-size: var(--font-size-label);
     font-weight: 500;
   }
-  
+
   .badge-secondary {
     background-color: var(--color-secondary-100);
     color: var(--color-secondary-700);
@@ -249,13 +251,23 @@
 /* Custom Utilities */
 @layer utilities {
   .text-primary-gradient {
-    background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-700));
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-500),
+      var(--color-primary-700)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
-  
+
   .shadow-custom {
     box-shadow: 0 4px 14px 0 rgba(0, 86, 179, 0.15);
   }
+}
+
+.DRcard-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
