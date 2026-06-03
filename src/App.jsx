@@ -8,6 +8,13 @@ import Footer from './components/Footer'
 import SplashScreen from './components/SplashScreen'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
+import Contact from './pages/Contact'
+import About from './pages/About'
+import FindDoctor from './pages/FindDoctor'
+import Appointment from './pages/Appointment'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import DashBoard from './pages/DashBoard'
+
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -31,13 +38,13 @@ const App = () => {
           <Header />
           <main className="flex-grow">
             <Routes>
-              {/* Add ur route here */}
-
-
-
-
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/doctors" element={<FindDoctor />} />
+              <Route path="/appointment" element={<Appointment />} />
               <Route path="/contact" element={<Contact />} />
-             
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/dashboard" element={<DashBoard />} />
             </Routes>
           </main>
           <Footer />

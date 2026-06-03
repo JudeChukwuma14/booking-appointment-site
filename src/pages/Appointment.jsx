@@ -24,7 +24,7 @@ const providers = [
   },
 ];
 
-export default function BookingPage() {
+export default function Appointment() {
   const [selectedProvider, setSelectedProvider] = useState(providers[0]);
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
@@ -35,11 +35,37 @@ export default function BookingPage() {
     email: '',
     phone: '',
     reason: '',
+    medicalHistory: '',
   });
 
   const handleProviderChange = (providerId) => {
     const provider = providers.find((item) => item.id === providerId);
     setSelectedProvider(provider);
+  };
+
+  const formatTimeAMPM = (timeStr) => {
+    if (!timeStr) return 'Not selected';
+    const [hours, minutes] = timeStr.split(':');
+    let h = parseInt(hours);
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    return `${h}:${minutes} ${ampm}`;
+  };
+
+  const isTimeUnavailable = time && time > '19:00';
+
+  const isStep1Valid = date !== '' && time !== '' && !isTimeUnavailable;
+  const isStep2Valid =
+    patientInfo.firstName.trim() !== '' &&
+    patientInfo.lastName.trim() !== '' &&
+    patientInfo.email.trim() !== '' &&
+    patientInfo.phone.trim() !== '' &&
+    patientInfo.medicalHistory.trim() !== '';
+
+  const canProceed = () => {
+    if (currentStep === 1) return isStep1Valid;
+    if (currentStep === 2) return isStep2Valid;
+    return true;
   };
 
   return (
@@ -53,13 +79,12 @@ export default function BookingPage() {
 
       <div className="mt-6 rounded-2xl bg-white p-6 shadow-sm">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <button 
+          <button
             onClick={() => setCurrentStep(1)}
             className="flex items-center gap-4 text-left transition hover:opacity-80"
           >
-            <div className={`flex h-11 w-11 items-center justify-center rounded-full text-base font-semibold transition ${
-              currentStep >= 1 ? 'bg-[#003b8f] text-white' : 'bg-slate-100 text-slate-400'
-            }`}>
+            <div className={`flex h-11 w-11 items-center justify-center rounded-full text-base font-semibold transition ${currentStep >= 1 ? 'bg-[#003b8f] text-white' : 'bg-slate-100 text-slate-400'
+              }`}>
               1
             </div>
             <div>
@@ -68,37 +93,36 @@ export default function BookingPage() {
             </div>
           </button>
           <div className="hidden h-px flex-1 bg-slate-200 lg:block"></div>
-          <button 
-            onClick={() => setCurrentStep(2)}
-            className="flex items-center gap-4 text-left transition hover:opacity-80"
+          <button
+            onClick={() => isStep1Valid && setCurrentStep(2)}
+            disabled={!isStep1Valid}
+            className={`flex items-center gap-4 text-left transition ${!isStep1Valid ? 'opacity-40 cursor-not-allowed' : 'hover:opacity-80'}`}
           >
-            <div className={`flex h-11 w-11 items-center justify-center rounded-full text-base font-semibold transition ${
-              currentStep >= 2 ? 'bg-[#003b8f] text-white' : 'bg-slate-100 text-slate-400'
-            }`}>
+            <div className={`flex h-11 w-11 items-center justify-center rounded-full text-base font-semibold transition ${currentStep >= 2 ? 'bg-[#003b8f] text-white' : 'bg-slate-100 text-slate-400'
+              }`}>
               2
             </div>
             <p className={`text-sm ${currentStep === 2 ? 'font-semibold text-slate-900' : 'text-slate-500'}`}>Patient Info</p>
           </button>
           <div className="hidden h-px flex-1 bg-slate-200 lg:block"></div>
-          <button 
-            onClick={() => setCurrentStep(3)}
-            className="flex items-center gap-4 text-left transition hover:opacity-80"
+          <button
+            onClick={() => isStep1Valid && isStep2Valid && setCurrentStep(3)}
+            disabled={!isStep1Valid || !isStep2Valid}
+            className={`flex items-center gap-4 text-left transition ${(!isStep1Valid || !isStep2Valid) ? 'opacity-40 cursor-not-allowed' : 'hover:opacity-80'}`}
           >
-            <div className={`flex h-11 w-11 items-center justify-center rounded-full text-base font-semibold transition ${
-              currentStep >= 3 ? 'bg-[#003b8f] text-white' : 'bg-slate-100 text-slate-400'
-            }`}>
+            <div className={`flex h-11 w-11 items-center justify-center rounded-full text-base font-semibold transition ${currentStep >= 3 ? 'bg-[#003b8f] text-white' : 'bg-slate-100 text-slate-400'
+              }`}>
               3
             </div>
             <p className={`text-sm ${currentStep === 3 ? 'font-semibold text-slate-900' : 'text-slate-500'}`}>Review</p>
           </button>
           <div className="hidden h-px flex-1 bg-slate-200 lg:block"></div>
-          <button 
-            onClick={() => setCurrentStep(4)}
-            className="flex items-center gap-4 text-left transition hover:opacity-80"
+          <button
+            disabled={currentStep !== 4}
+            className={`flex items-center gap-4 text-left transition ${currentStep !== 4 ? 'opacity-40 cursor-not-allowed' : 'hover:opacity-80'}`}
           >
-            <div className={`flex h-11 w-11 items-center justify-center rounded-full text-base font-semibold transition ${
-              currentStep >= 4 ? 'bg-[#003b8f] text-white' : 'bg-slate-100 text-slate-400'
-            }`}>
+            <div className={`flex h-11 w-11 items-center justify-center rounded-full text-base font-semibold transition ${currentStep >= 4 ? 'bg-[#003b8f] text-white' : 'bg-slate-100 text-slate-400'
+              }`}>
               4
             </div>
             <p className={`text-sm ${currentStep === 4 ? 'font-semibold text-slate-900' : 'text-slate-500'}`}>Confirm</p>
@@ -121,11 +145,10 @@ export default function BookingPage() {
                     key={provider.id}
                     type="button"
                     onClick={() => handleProviderChange(provider.id)}
-                    className={`rounded-2xl border p-4 text-left transition ${
-                      selectedProvider?.id === provider.id
-                        ? 'border-blue-500 bg-blue-50'
-                        : 'border-slate-200 bg-white hover:border-slate-300'
-                    }`}
+                    className={`rounded-2xl border p-4 text-left transition ${selectedProvider?.id === provider.id
+                      ? 'border-blue-500 bg-blue-50'
+                      : 'border-slate-200 bg-white hover:border-slate-300'
+                      }`}
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex items-center gap-4">
@@ -152,6 +175,7 @@ export default function BookingPage() {
                   <input
                     type="date"
                     value={date}
+                    required
                     onChange={(e) => setDate(e.target.value)}
                     className="mt-2 w-full rounded-2xl border cursor-pointer border-slate-300 bg-white px-4 py-3 text-slate-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                   />
@@ -162,10 +186,16 @@ export default function BookingPage() {
                   <input
                     type="time"
                     value={time}
+                    required
                     onChange={(e) => setTime(e.target.value)}
                     className="mt-2 w-full rounded-2xl cursor-pointer border border-slate-300 bg-white px-4 py-3 text-slate-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                   />
                 </label>
+                {isTimeUnavailable && (
+                  <div className="mt-2 md:col-span-2 rounded-xl bg-red-50 p-4 border border-red-100 text-sm text-red-700">
+                    <strong>Doctors are unavailable:</strong> Our providers are not available after 7:00 PM. Please select an earlier time or apply for the next day.
+                  </div>
+                )}
               </div>
             </>
           )}
@@ -184,6 +214,7 @@ export default function BookingPage() {
                     type="text"
                     placeholder="e.g.Victony"
                     value={patientInfo.firstName}
+                    required
                     onChange={(e) => setPatientInfo({ ...patientInfo, firstName: e.target.value })}
                     className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                   />
@@ -194,6 +225,7 @@ export default function BookingPage() {
                     type="text"
                     placeholder="e.g. Anthony"
                     value={patientInfo.lastName}
+                    required
                     onChange={(e) => setPatientInfo({ ...patientInfo, lastName: e.target.value })}
                     className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                   />
@@ -204,6 +236,7 @@ export default function BookingPage() {
                     type="email"
                     placeholder="Victony@example.com"
                     value={patientInfo.email}
+                    required
                     onChange={(e) => setPatientInfo({ ...patientInfo, email: e.target.value })}
                     className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                   />
@@ -214,12 +247,24 @@ export default function BookingPage() {
                     type="tel"
                     placeholder="+234"
                     value={patientInfo.phone}
+                    required
                     onChange={(e) => setPatientInfo({ ...patientInfo, phone: e.target.value })}
                     className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                   />
                 </div>
                 <div className="space-y-2 md:col-span-2">
-                  <label className="text-sm font-semibold text-slate-700">Reason for Visit (Optional)</label>
+                  <label className="text-sm font-semibold text-slate-700">Medical History / Details</label>
+                  <textarea
+                    rows="3"
+                    placeholder="List any allergies, current medications, or pre-existing conditions..."
+                    value={patientInfo.medicalHistory}
+                    required
+                    onChange={(e) => setPatientInfo({ ...patientInfo, medicalHistory: e.target.value })}
+                    className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 resize-none"
+                  />
+                </div>
+                <div className="space-y-2 md:col-span-2">
+                  <label className="text-sm font-semibold text-slate-700">Reason for Visit </label>
                   <textarea
                     rows="3"
                     placeholder="Briefly describe your symptoms or reason for the appointment..."
@@ -265,7 +310,7 @@ export default function BookingPage() {
                   </div>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Time</p>
-                    <p className="mt-1 font-semibold text-slate-900">{time || 'Not selected'}</p>
+                    <p className="mt-1 font-semibold text-slate-900">{formatTimeAMPM(time)}</p>
                   </div>
                 </div>
 
@@ -278,6 +323,13 @@ export default function BookingPage() {
                   <div className="border-t border-slate-200 pt-6">
                     <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Reason for Visit</p>
                     <p className="mt-1 text-sm text-slate-700 italic">"{patientInfo.reason}"</p>
+                  </div>
+                )}
+
+                {patientInfo.medicalHistory && (
+                  <div className="border-t border-slate-200 pt-6">
+                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Medical Details</p>
+                    <p className="mt-1 text-sm text-slate-700 italic">"{patientInfo.medicalHistory}"</p>
                   </div>
                 )}
               </div>
@@ -297,7 +349,7 @@ export default function BookingPage() {
               </div>
               <h2 className="text-2xl font-bold text-slate-900">Appointment Confirmed!</h2>
               <p className="mt-2 text-slate-600">Your visit has been scheduled. Check your email for details.</p>
-              <button 
+              <button
                 onClick={() => setCurrentStep(1)}
                 className="mt-8 text-[#003b8f] font-semibold hover:underline"
               >
@@ -334,18 +386,31 @@ export default function BookingPage() {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Time</p>
-                <p className="mt-2 font-medium text-slate-900">{time || 'Not selected'}</p>
+                <p className="mt-2 font-medium text-slate-900">{formatTimeAMPM(time)}</p>
               </div>
             </div>
-            <button
-              type="button"
-              onClick={() => {
-                if (currentStep < 4) setCurrentStep(currentStep + 1);
-              }}
-              className="mt-8 w-full rounded-2xl bg-[#003b8f] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#002d6f]"
-            >
-              {currentStep === 1 ? 'Patient Details' : currentStep === 2 ? 'Review Details' : currentStep === 3 ? 'Confirm Appointment' : 'Done'}
-            </button>
+            <div className="mt-8 flex flex-col gap-3">
+              {currentStep > 1 && currentStep < 4 && (
+                <button
+                  type="button"
+                  onClick={() => setCurrentStep(currentStep - 1)}
+                  className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+                >
+                  Back
+                </button>
+              )}
+              <button
+                type="button"
+                disabled={!canProceed()}
+                onClick={() => {
+                  if (currentStep < 4) setCurrentStep(currentStep + 1);
+                }}
+                className={`w-full rounded-2xl px-4 py-3 text-sm font-semibold text-white transition ${!canProceed() ? 'bg-slate-300 cursor-not-allowed' : 'bg-[#003b8f] hover:bg-[#002d6f]'
+                  }`}
+              >
+                {currentStep === 1 ? 'Patient Details' : currentStep === 2 ? 'Review Details' : currentStep === 3 ? 'Confirm Appointment' : 'Done'}
+              </button>
+            </div>
           </div>
         </aside>
       </div>
