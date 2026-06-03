@@ -88,7 +88,7 @@ const FindDoctor = () => {
         </div>
 
         {/* Filter Section */}
-        <div className='bg-white border border-[#E2E8F0] rounded-2xl shadow-sm p-6 flex flex-col lg:flex-row items-end gap-5'>
+        <div className='bg-white border border-[#E2E8F0] rounded-2xl shadow-2xs p-6 flex flex-col lg:flex-row items-end gap-5'>
           {/* Specialty */}
           <div className='flex-1 w-full'>
             <label className='block text-sm font-semibold text-[#334155] mb-2'>
