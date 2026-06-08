@@ -13,8 +13,6 @@ import Departments from "./pages/Departments";
 import FindDoctor from "./pages/FindDoctor";
 import BookingPage from "./pages/BookingPage";
 
-import AdminSignin from "./components/AdminSignin";
-
 import Dashboard from "./pages/dashboard/Dashboard";
 import Appointments from "./pages/dashboard/Appointments";
 import Records from "./pages/dashboard/Records";
@@ -38,27 +36,23 @@ const App = () => {
       ) : (
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-grow">
+          <main className="flex-">
             <Routes>
-              {/* Public routes */}
               <Route path="/" element={<Home />} />
-              <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<AboutUsPage />} />
               <Route path="/departments" element={<Departments />} />
               <Route path="/doctors" element={<FindDoctor />} />
               <Route path="/appointment" element={<BookingPage />} />
-              <Route path="/admin/signin" element={<AdminSignin />} />
 
-              {/* Dashboard routes */}
               <Route path="/dashboard" element={<Dashboard />} />
               <Route
                 path="/dashboard/appointments"
                 element={<Appointments />}
               />
-              <Route path="/dashboard/records" element={<Records />} />
-              <Route path="/dashboard/billing" element={<Billing />} />
+              <Route path="/dashboard/records" element={<Records />} /> 
+              <Route path="/dashboard/billing" element={<Billing />} /> 
               <Route path="/dashboard/analytics" element={<Analytics />} />
-              <Route path="/dashboard/settings" element={<Settings />} />
+              <Route path="/dashboard/settings" element={<Settings />} /> 
             </Routes>
           </main>
           <Footer />

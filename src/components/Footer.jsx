@@ -37,7 +37,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <Link
-                                    to="/privacy"
+                                    to="/privacy-policy"
                                     className="text-gray-600 hover:text-primary-700 transition-colors text-sm font-medium"
                                 >
                                     Privacy Policy
