@@ -12,6 +12,7 @@ import AboutUsPage from "./pages/About";
 import Departments from "./pages/Departments";
 import FindDoctor from "./pages/FindDoctor";
 import BookingPage from "./pages/BookingPage";
+import AdminSignin from "./components/AdminSignin";
 
 import Dashboard from "./pages/dashboard/Dashboard";
 import Appointments from "./pages/dashboard/Appointments";
@@ -36,13 +37,15 @@ const App = () => {
       ) : (
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-">
+          <main className="flex-grow">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<AboutUsPage />} />
               <Route path="/departments" element={<Departments />} />
               <Route path="/doctors" element={<FindDoctor />} />
               <Route path="/appointment" element={<BookingPage />} />
+              <Route path="/admin/signin" element={<AdminSignin />} />
 
               <Route path="/dashboard" element={<Dashboard />} />
               <Route
