@@ -84,6 +84,14 @@ const Footer = () => {
                                     Maps & Directions
                                 </Link>
                             </li>
+                            <li>
+                                <Link
+                                    to="/admin/signin"
+                                    className="text-gray-600 hover:text-[#00346B] transition-colors text-sm font-medium"
+                                >
+                                    Admin Portal
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 

@@ -13,6 +13,8 @@ import Departments from "./pages/Departments";
 import FindDoctor from "./pages/FindDoctor";
 import BookingPage from "./pages/BookingPage";
 
+import AdminSignin from "./components/AdminSignin";
+
 import Dashboard from "./pages/dashboard/Dashboard";
 import Appointments from "./pages/dashboard/Appointments";
 import Records from "./pages/dashboard/Records";
@@ -45,6 +47,7 @@ const App = () => {
               <Route path="/departments" element={<Departments />} />
               <Route path="/doctors" element={<FindDoctor />} />
               <Route path="/appointment" element={<BookingPage />} />
+              <Route path="/admin/signin" element={<AdminSignin />} />
 
               {/* Dashboard routes */}
               <Route path="/dashboard" element={<Dashboard />} />
