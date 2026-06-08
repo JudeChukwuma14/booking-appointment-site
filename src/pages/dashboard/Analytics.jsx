@@ -476,7 +476,6 @@ const Analytics = () => {
           </p>
         </div>
       </div>
->>>>>>> d2a4a8717a870820ea76cfb798f915b9a8d168a6
     </div>
   );
 };
