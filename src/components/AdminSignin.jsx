@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Lock, Eye, EyeOff, AlertCircle, Loader2, LogIn, Asterisk, IdCard } from "lucide-react";
 
-// Custom SVG to match the exact floating shield with plus icon from the mockup
+
 const FloatingShieldIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -11,7 +11,7 @@ const FloatingShieldIcon = ({ className }) => (
   </svg>
 );
 
-// Custom SVG to match the exact floating chart with trendline icon from the mockup
+
 const FloatingChartIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
     <path d="M3 3v18h18" />
@@ -22,7 +22,7 @@ const FloatingChartIcon = ({ className }) => (
   </svg>
 );
 
-// Brand icon with briefcase + medical plus symbol inside
+
 const BrandIcon = () => (
   <div className="w-16 h-16 bg-[#00346b] rounded-xl flex items-center justify-center shadow-lg mb-4">
     <svg className="w-9 h-9 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -73,13 +73,13 @@ const AdminSignin = () => {
         backgroundSize: "32px 32px"
       }}
     >
-      {/* Top right large decorative icon */}
+     
       <FloatingShieldIcon className="fixed -top-6 -right-6 text-[#00346b]/[0.08] w-[260px] h-[260px] pointer-events-none hidden md:block" />
       
-      {/* Bottom left large decorative icon */}
+      
       <FloatingChartIcon className="fixed -bottom-6 -left-6 text-[#00346b]/[0.08] w-[260px] h-[260px] pointer-events-none hidden md:block" />
 
-      {/* Brand Header */}
+   
       <div className="flex flex-col items-center text-center mb-6 z-10">
         <BrandIcon />
         <h1 className="text-3xl font-black tracking-tight text-slate-900 mb-1">
