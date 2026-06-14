@@ -51,10 +51,10 @@ const App = () => {
                 path="/dashboard/appointments"
                 element={<Appointments />}
               />
-              <Route path="/dashboard/records" element={<Records />} /> 
-              <Route path="/dashboard/billing" element={<Billing />} /> 
+              <Route path="/dashboard/records" element={<Records />} />
+              <Route path="/dashboard/billing" element={<Billing />} />
               <Route path="/dashboard/analytics" element={<Analytics />} />
-              <Route path="/dashboard/settings" element={<Settings />} /> 
+              <Route path="/dashboard/settings" element={<Settings />} />
             </Routes>
           </main>
           <Footer />
